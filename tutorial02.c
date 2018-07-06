@@ -134,6 +134,7 @@ int main(int argc, const char * argv[]) {
                 SDL_RenderCopy(renderer, bmp, &rect, &rect);
                 SDL_RenderPresent(renderer);
                 SDL_Delay(50);
+                av_packet_unref(&packet);
             } else if (ret == AVERROR(EAGAIN)) {
                 continue;
             } else {

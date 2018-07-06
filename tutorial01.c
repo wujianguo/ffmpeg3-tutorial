@@ -124,6 +124,7 @@ int main(int argc, const char * argv[]) {
                           frame_out->data, frame_out->linesize);
 
                 save_frame(frame_out, codec_ctx->width, codec_ctx->height, frame_index);
+                av_packet_unref(&packet);
                 if (frame_index++ > 5) {
                     break;
                 }
